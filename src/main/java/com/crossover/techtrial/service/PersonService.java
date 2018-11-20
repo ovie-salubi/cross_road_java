@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.crossover.techtrial.service;
 
@@ -8,14 +8,29 @@ import com.crossover.techtrial.model.Person;
 
 /**
  * PersonService interface for Persons.
+ *
  * @author cossover
  *
  */
 public interface PersonService {
-  public List<Person> getAll();
-  
-  public Person save(Person p);
-  
-  public Person findById(Long personId);
-  
+    /**
+     * 
+     * @return 
+     */
+    public List<Person> getAll();
+
+    /**
+     * 
+     * @param p
+     * @return 
+     */
+    public Person save(Person p);
+
+    /**
+     * 
+     * @param personId
+     * @return 
+     */
+    public Person findById(Long personId);
+
 }

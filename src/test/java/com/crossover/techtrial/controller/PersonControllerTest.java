@@ -47,7 +47,7 @@ public class PersonControllerTest {
   }
   
   @Test
-  public void testPanelShouldBeRegistered() throws Exception {
+  public void testPersonShouldBeRegistered() throws Exception {
     HttpEntity<Object> person = getHttpEntity(
         "{\"name\": \"test 1\", \"email\": \"test10000000000001@gmail.com\"," 
             + " \"registrationNumber\": \"41DCT\",\"registrationDate\":\"2018-08-08T12:12:12\" }");

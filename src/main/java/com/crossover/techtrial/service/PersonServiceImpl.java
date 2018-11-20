@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.crossover.techtrial.service;
 
@@ -16,32 +16,41 @@ import com.crossover.techtrial.repositories.PersonRepository;
  *
  */
 @Service
-public class PersonServiceImpl implements PersonService{
+public class PersonServiceImpl implements PersonService {
 
-  @Autowired
-  PersonRepository personRepository;
-  
-  /* (non-Javadoc)
-   * @see com.crossover.techtrial.service.PersonService#getAll()
-   */
-  @Override
-  public List<Person> getAll() {
-    List<Person> personList = new ArrayList<>();
-    personRepository.findAll().forEach(personList::add);
-    return personList;
-    
-  }
-  
-  public Person save(Person p) {
-    return personRepository.save(p);
-  }
+    @Autowired
+    PersonRepository personRepository;
 
-  @Override
-  public Person findById(Long personId) {
-    Optional<Person> dbPerson = personRepository.findById(personId);
-    return dbPerson.orElse(null);
-  }
-  
-  
+    /* (non-Javadoc)
+     * @see com.crossover.techtrial.service.PersonService#getAll()
+     */
+    @Override
+    public List<Person> getAll() {
+        List<Person> personList = new ArrayList<>();
+        personRepository.findAll().forEach(personList::add);
+        return personList;
+
+    }
+
+    /**
+     * 
+     * @param p
+     * @return 
+     */
+    @Override
+    public Person save(Person p) {
+        return personRepository.save(p);
+    }
+
+    /**
+     * 
+     * @param personId
+     * @return 
+     */
+    @Override
+    public Person findById(Long personId) {
+        Optional<Person> dbPerson = personRepository.findById(personId);
+        return dbPerson.orElse(null);
+    }
 
 }
